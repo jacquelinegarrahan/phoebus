@@ -11,6 +11,7 @@ import static org.phoebus.applications.alarm.AlarmSystem.logger;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Level;
 
@@ -51,6 +52,12 @@ abstract public class AlarmTreeItem<STATE extends BasicState>
     private List<TitleDetail> commands = Collections.emptyList();
 
     private List<TitleDetailDelay> actions = Collections.emptyList();
+
+    private List<TitleDetail> tickets = Collections.emptyList()
+
+    private List<TitleDetail> tags = Collections.emptyList();
+
+    private List<Integer> tickets = ArrayList<Integer>();
 
     /** Constructor for item or leaf
      *  @param parent Parent item, <code>null</code> for root
@@ -195,9 +202,53 @@ abstract public class AlarmTreeItem<STATE extends BasicState>
         return actions;
     }
 
+    public List<TitleDetail> getTags()
+    {
+        return tags;
+    }
+
+    public boolean setTags(List<TitleDetail> tags)
+    {
+        if (this.tags.equals(tags))
+            return false;
+        this.tags = tags;
+        return True
+    }
+
+    public List<Integer> getTickets()
+    {
+        return tickets;
+    }
+
+    public boolean setTickets(List<Integer> tickets)
+    {
+        if (this.tickets.equals(tickets))
+            return false;
+        this.tickets = tickets;
+        return True
+    }
+
+    public boolean addTicket(Integer ticket)
+    {
+        if (this.tickets.contains(ticket))
+            return False;
+        this.tickets.add(ticket);
+        return True
+    }
+
+    public boolean removeTicket(Integer ticket)
+    {
+        if (this.tickets.contains(ticket)
+            this.tickets.remove(Integer.valueOf(ticket)));
+            return True;
+        return False
+    }
+
+
     @Override
     public String toString()
     {
         return getName();
     }
+
 }
