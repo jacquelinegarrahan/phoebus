@@ -62,6 +62,10 @@ public class AlarmModelReaderTest
 	+ "         <title>a1pv1 Command Title 1</title>\n"
 	+ "         <details>a1pv1 Command Detail 1</details>\n"
 	+ "       </command>\n"
+	+ "       <tags>\n"
+	+ "         <title>a1pv1 Tag 1</title>\n"
+	+ "         <details>a1pv1 Tag Detail 1</details>\n"
+	+ "       </tags>\n"
 	+ "    </pv>"
 	+ "    <pv name=\"a1pv2\">\n"
 	+ "      <description>a1pv2 description</description>\n"
@@ -151,6 +155,13 @@ public class AlarmModelReaderTest
 
 		assertEquals("a1pv1 Command Title 1", a1pv1_commands.get(0).title);
 		assertEquals("a1pv1 Command Detail 1", a1pv1_commands.get(0).detail);
+
+		final List<TitleDetail> a1pv1_tags = ((AlarmTreeItem<?>)a1pv1).getTags();
+
+		assertEquals(1, a1pv1_tags.size());
+
+		assertEquals("a1pv1 Tag 1", a1pv1_tags.get(0).title);
+		assertEquals("a1pv1 Tag Detail 1", a1pv1_tags.get(0).detail);
 
 		final AlarmTreeLeaf a1pv2 = (AlarmTreeLeaf) area1.getChild("a1pv2");
 

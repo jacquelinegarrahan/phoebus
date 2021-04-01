@@ -54,6 +54,8 @@ public class AlarmConfigProducerDemo
 
         AlarmClientNode area = new AlarmClientNode(root, "Vacuum");
         area.setDisplays(List.of(new TitleDetail("A", "one.opi"), new TitleDetail("B", "other.opi")));
+        area.setTags(List.of(new TitleDetail("sector", "sector1"), new TitleDetail("maintenance schedule", "1")));
+
 
         AlarmClientNode system = new AlarmClientNode(area, "Sector000001");
         system.setGuidance(List.of(new TitleDetail("Contacts", "Call Jane")));
@@ -63,6 +65,7 @@ public class AlarmConfigProducerDemo
 
         AlarmClientLeaf pv2 = new AlarmClientLeaf(system, "SomeOtherPVName");
         pv2.setEnabled(false);
+        pv2.setTags(List.of(new TitleDetail("some tag", "tag name")));
 
         // 1000 'sections' of 10 subsections of 10 PVs  -> 100k PVs
         for (int s=0; s<1000; ++s)

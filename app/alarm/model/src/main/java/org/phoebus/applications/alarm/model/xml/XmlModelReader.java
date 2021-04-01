@@ -305,6 +305,16 @@ public class XmlModelReader
             pv.setActions(tdd);
             tdd = new ArrayList<>();
         }
+
+        for (final Element child : XMLUtil.getChildElements(node, TAG_TAGS))
+            td.add(getTD(child));
+
+        if (td.size() > 0)
+        {
+            pv.setTags(td);
+            td = new ArrayList<>();
+        }
+
     }
 
     private TitleDetail getTD(final Element node)
