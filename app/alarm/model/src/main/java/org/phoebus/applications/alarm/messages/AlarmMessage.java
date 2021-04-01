@@ -44,6 +44,7 @@ public class AlarmMessage implements Serializable{
     private List<AlarmDetail> displays;
     private List<AlarmDetail> commands;
     private List<AlarmDetail> actions;
+    private List<AlarmDetail> tags;
 
     private String delete;
 
@@ -248,6 +249,15 @@ public class AlarmMessage implements Serializable{
         this.key = key;
     }
 
+
+    public List<AlarmDetail> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<AlarmDetail> tags) {
+        this.tags = tags;
+    }
+
     private boolean isConfig() {
         if(key != null && !key.isEmpty()) {
             return key.startsWith("config");
@@ -281,6 +291,7 @@ public class AlarmMessage implements Serializable{
             configMessage.setDisplays(displays);
             configMessage.setCommands(commands);
             configMessage.setActions(actions);
+            configMessage.setTags(tags);
             return configMessage;
         } else {
             return null;
@@ -298,7 +309,7 @@ public class AlarmMessage implements Serializable{
             stateMessage.setCurrent_severity(current_severity);
             stateMessage.setCurrent_message(current_message);
             stateMessage.setMode(mode);
-	    stateMessage.setNotify(notify);
+	        stateMessage.setNotify(notify);
             stateMessage.setLatch(latch);
             return stateMessage;
         } else {
@@ -394,6 +405,8 @@ public class AlarmMessage implements Serializable{
         private List<AlarmDetail> commands;
         @JsonIgnore
         private List<AlarmDetail> actions;
+        @JsonIgnore
+        private List<AlarmDetail> tags;
     }
 
     @Override
