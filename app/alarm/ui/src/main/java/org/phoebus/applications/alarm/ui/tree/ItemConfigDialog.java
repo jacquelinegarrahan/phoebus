@@ -178,6 +178,15 @@ class ItemConfigDialog extends Dialog<Boolean>
         actions.setPrefHeight(100);
         layout.add(actions, 0, row++, 2, 1);
 
+        // Tags:
+        layout.add(new Label("Guidance:"), 0, row++);
+        final Label dummy = new Label("");
+        GridPane.setHgrow(dummy, Priority.ALWAYS);
+        layout.add(dummy, 1, row++);
+        tags = new TitleDetailTable(item.getTags());
+        tags.setPrefHeight(100);
+        layout.add(tags, 0, row++, 2, 1);
+
         // Dialog is quite high; allow scroll
         final ScrollPane scroll = new ScrollPane(layout);
 
@@ -229,6 +238,7 @@ class ItemConfigDialog extends Dialog<Boolean>
         config.setDisplays(displays.getItems());
         config.setCommands(commands.getItems());
         config.setActions(actions.getItems());
+        config.setTags(guidance.getTags());
 
         try
         {
