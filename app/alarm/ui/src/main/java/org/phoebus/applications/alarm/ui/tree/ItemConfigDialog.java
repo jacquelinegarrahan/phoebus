@@ -180,9 +180,6 @@ class ItemConfigDialog extends Dialog<Boolean>
 
         // Tags:
         layout.add(new Label("Tags:"), 0, row++);
-        final Label dummy = new Label("");
-        GridPane.setHgrow(dummy, Priority.ALWAYS);
-        layout.add(dummy, 1, row++);
         tags = new TitleDetailTable(item.getTags());
         tags.setPrefHeight(100);
         layout.add(tags, 0, row++, 2, 1);
