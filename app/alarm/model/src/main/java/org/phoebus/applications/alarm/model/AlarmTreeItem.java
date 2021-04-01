@@ -53,8 +53,6 @@ abstract public class AlarmTreeItem<STATE extends BasicState>
 
     private List<TitleDetailDelay> actions = Collections.emptyList();
 
-    private List<TitleDetail> tickets = Collections.emptyList()
-
     private List<TitleDetail> tags = Collections.emptyList();
 
     private List<Integer> tickets = ArrayList<Integer>();
