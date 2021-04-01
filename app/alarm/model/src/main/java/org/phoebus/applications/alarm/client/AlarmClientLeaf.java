@@ -61,6 +61,7 @@ public class AlarmClientLeaf extends AlarmTreeItemWithState<ClientState> impleme
         pv.setDisplays(new ArrayList<>(getDisplays()));
         pv.setCommands(new ArrayList<>(getCommands()));
         pv.setActions(new ArrayList<>(getActions()));
+        pv.setTags(new ArrayList<>(getTags()));
         return pv;
     }
 
