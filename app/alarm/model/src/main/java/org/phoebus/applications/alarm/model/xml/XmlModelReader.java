@@ -179,7 +179,7 @@ public class XmlModelReader
             td = new ArrayList<>();
         }
 
-        for (final Element child : XMLUtil.getChildElements(node, TAG_TAG))
+        for (final Element child : XMLUtil.getChildElements(node, TAG_TAGS))
             td.add(getTD(child));
 
         if (td.size() > 0)
