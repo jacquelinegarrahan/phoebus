@@ -55,4 +55,5 @@ public interface JsonTags
     public static final String TITLE = "title";
     public static final String USER = "user";
     public static final String VALUE = "value";
+    public static final String TAGS = "tags";
 }
