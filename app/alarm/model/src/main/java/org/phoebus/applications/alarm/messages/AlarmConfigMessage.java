@@ -38,6 +38,7 @@ public class AlarmConfigMessage {
     private List<AlarmDetail> displays;
     private List<AlarmDetail> commands;
     private List<AlarmDetail> actions;
+    private List<AlarmDetail> tags;
 
     private String delete;
 
@@ -176,6 +177,14 @@ public class AlarmConfigMessage {
         this.config = config;
     }
 
+    public List<AlarmDetail> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<AlarmDetail> tags) {
+        this.tags = tags;
+    }
+
     @JsonIgnore
     public boolean isLeaf() {
         return this.description != null;
@@ -194,7 +203,8 @@ public class AlarmConfigMessage {
                 ", displays=" + displays +
                 ", commands=" + commands +
                 ", actions=" + actions +
-                ", delete=" + delete + "]";
+                ", delete=" + delete +
+                ", tags=" + tags + "]";
     }
 
     @JsonIgnore
