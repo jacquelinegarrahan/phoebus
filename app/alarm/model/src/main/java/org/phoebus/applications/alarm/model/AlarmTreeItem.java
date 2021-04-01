@@ -55,8 +55,6 @@ abstract public class AlarmTreeItem<STATE extends BasicState>
 
     private List<TitleDetail> tags = Collections.emptyList();
 
-    private List<Integer> tickets = ArrayList<Integer>();
-
     /** Constructor for item or leaf
      *  @param parent Parent item, <code>null</code> for root
      *  @param name Name of this item
@@ -211,35 +209,6 @@ abstract public class AlarmTreeItem<STATE extends BasicState>
             return false;
         this.tags = tags;
         return True
-    }
-
-    public List<Integer> getTickets()
-    {
-        return tickets;
-    }
-
-    public boolean setTickets(List<Integer> tickets)
-    {
-        if (this.tickets.equals(tickets))
-            return false;
-        this.tickets = tickets;
-        return True
-    }
-
-    public boolean addTicket(Integer ticket)
-    {
-        if (this.tickets.contains(ticket))
-            return False;
-        this.tickets.add(ticket);
-        return True
-    }
-
-    public boolean removeTicket(Integer ticket)
-    {
-        if (this.tickets.contains(ticket)
-            this.tickets.remove(Integer.valueOf(ticket)));
-            return True;
-        return False
     }
 
 
