@@ -238,7 +238,7 @@ class ItemConfigDialog extends Dialog<Boolean>
         config.setDisplays(displays.getItems());
         config.setCommands(commands.getItems());
         config.setActions(actions.getItems());
-        config.setTags(guidance.getTags());
+        config.setTags(tags.getTags());
 
         try
         {
