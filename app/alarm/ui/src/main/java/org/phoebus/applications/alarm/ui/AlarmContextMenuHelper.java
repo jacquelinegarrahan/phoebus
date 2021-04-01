@@ -120,7 +120,7 @@ public class AlarmContextMenuHelper
         added.clear();
         count.set(0);
 
-
+        /*
         for (AlarmTreeItem<?> item : selection)
         {
             addTags(node, menu_items, item, count);
@@ -129,6 +129,7 @@ public class AlarmContextMenuHelper
         }
         added.clear();
         count.set(0);
+        */
 
         if (AlarmUI.mayAcknowledge(model))
         {
