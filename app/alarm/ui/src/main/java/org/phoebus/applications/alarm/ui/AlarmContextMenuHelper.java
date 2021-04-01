@@ -120,6 +120,16 @@ public class AlarmContextMenuHelper
         added.clear();
         count.set(0);
 
+
+        for (AlarmTreeItem<?> item : selection)
+        {
+            addTags(node, menu_items, item, count);
+            if (count.get() >= AlarmSystem.alarm_menu_max_items)
+                break;
+        }
+        added.clear();
+        count.set(0);
+
         if (AlarmUI.mayAcknowledge(model))
         {
             if (active.size() > 0)
@@ -141,6 +151,21 @@ public class AlarmContextMenuHelper
             ContextMenuHelper.addSupportedEntries(node, menu);
         }
     }
+
+    /*
+
+    private void addTags(final Node node,
+                         final List<MenuItem> menu_items,
+                         final AlarmTreeItem<?> item,
+                         final AtomicInteger count
+                        )
+    {
+        menu_items.add(new ShowTagsAction(node, item, tags));
+
+        if (item.getParent() != null)
+            addTags(node, menu_items, item.getParent(), count);
+    }
+    */
 
     private static MenuItem createSkippedEntriesHint(final Node node, final String type)
     {
@@ -212,4 +237,5 @@ public class AlarmContextMenuHelper
         if (item.getParent() != null)
             addCommands(node, menu_items, item.getParent(), count);
     }
+
 }
