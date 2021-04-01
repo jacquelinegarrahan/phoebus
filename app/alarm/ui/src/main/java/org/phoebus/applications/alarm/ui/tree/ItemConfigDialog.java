@@ -44,7 +44,7 @@ class ItemConfigDialog extends Dialog<Boolean>
     private CheckBox enabled, latching, annunciating;
     private Spinner<Integer> delay, count;
     private TextField filter;
-    private final TitleDetailTable guidance, displays, commands;
+    private final TitleDetailTable guidance, displays, commands, tags;
     private final TitleDetailDelayTable actions;
 
     public ItemConfigDialog(final AlarmClient model, final AlarmTreeItem<?> item)
@@ -179,7 +179,7 @@ class ItemConfigDialog extends Dialog<Boolean>
         layout.add(actions, 0, row++, 2, 1);
 
         // Tags:
-        layout.add(new Label("Guidance:"), 0, row++);
+        layout.add(new Label("Tags:"), 0, row++);
         final Label dummy = new Label("");
         GridPane.setHgrow(dummy, Priority.ALWAYS);
         layout.add(dummy, 1, row++);
