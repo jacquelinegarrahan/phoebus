@@ -208,7 +208,7 @@ abstract public class AlarmTreeItem<STATE extends BasicState>
         if (this.tags.equals(tags))
             return false;
         this.tags = tags;
-        return True;
+        return true;
     }
 
 
