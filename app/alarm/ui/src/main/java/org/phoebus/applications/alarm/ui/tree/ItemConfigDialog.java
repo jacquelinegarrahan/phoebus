@@ -157,31 +157,31 @@ class ItemConfigDialog extends Dialog<Boolean>
         GridPane.setHgrow(dummy, Priority.ALWAYS);
         layout.add(dummy, 1, row++);
         guidance = new TitleDetailTable(item.getGuidance());
-        guidance.setPrefHeight(100);
+        guidance.setPrefHeight(75);
         layout.add(guidance, 0, row++, 2, 1);
 
         // Displays:
         layout.add(new Label("Displays:"), 0, row++);
         displays = new TitleDetailTable(item.getDisplays());
-        displays.setPrefHeight(100);
+        displays.setPrefHeight(75);
         layout.add(displays, 0, row++, 2, 1);
 
         // Commands:
         layout.add(new Label("Commands:"), 0, row++);
         commands = new TitleDetailTable(item.getCommands());
-        commands.setPrefHeight(100);
+        commands.setPrefHeight(75);
         layout.add(commands, 0, row++, 2, 1);
 
         // Automated Actions:
         layout.add(new Label("Automated Actions:"), 0, row++);
         actions = new TitleDetailDelayTable(item.getActions());
-        actions.setPrefHeight(100);
+        actions.setPrefHeight(75);
         layout.add(actions, 0, row++, 2, 1);
 
         // Tags:
         layout.add(new Label("Tags:"), 0, row++);
         tags = new TitleDetailTable(item.getTags());
-        tags.setPrefHeight(100);
+        tags.setPrefHeight(75);
         layout.add(tags, 0, row++, 2, 1);
 
         // Dialog is quite high; allow scroll
@@ -231,11 +231,12 @@ class ItemConfigDialog extends Dialog<Boolean>
         }
         else
             config = new AlarmClientNode(null, item.getName());
+
+        config.setTags(tags.getItems());
         config.setGuidance(guidance.getItems());
         config.setDisplays(displays.getItems());
         config.setCommands(commands.getItems());
         config.setActions(actions.getItems());
-        config.setTags(tags.getItems());
 
         try
         {
