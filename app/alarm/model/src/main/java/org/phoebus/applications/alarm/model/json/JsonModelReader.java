@@ -121,6 +121,12 @@ public class JsonModelReader
         else
             changed |= node.setActions(parseTitleDetailDelay(jn));
 
+        jn = json.get(JsonTags.TAGS);
+            if (jn == null)
+                changed |= node.setTags(Collections.emptyList());
+            else
+                changed |= node.setTags(parseTitleDetail(jn));
+
         return changed;
     }
 
