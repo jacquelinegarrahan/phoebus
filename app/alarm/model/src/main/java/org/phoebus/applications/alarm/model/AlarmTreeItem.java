@@ -203,7 +203,7 @@ abstract public class AlarmTreeItem<STATE extends BasicState>
         return tags;
     }
 
-    public boolean setTags(List<TitleDetail> tags)
+    public boolean setTags(final List<TitleDetail> tags)
     {
         if (this.tags.equals(tags))
             return false;
